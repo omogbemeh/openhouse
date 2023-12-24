@@ -7,7 +7,7 @@ export const getCommunities = async () => {
   try {
     return http.get<Array<Community>>("/communities.json");
   } catch (err: unknown) {
-    console.log("***errr " + err);
+    throw new Error("Error getting Communities");
   }
 };
 
