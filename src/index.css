@@ -48,6 +48,10 @@ h1 {
   font-weight: 400;
   font-size: 1.8em;
   color: #333;
+
+  @media screen and (max-width: 421px) {
+    font-size: 1.5em;
+  }
 }
 
 h2 {

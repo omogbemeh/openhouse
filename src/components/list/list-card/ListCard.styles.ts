@@ -22,9 +22,6 @@ export const ListCardContainer = styled.div`
 
   @media screen and (min-width: 414px) {
     /* Styles for screens with a minimum width of 414px pixels */
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
     height: 100%;
     width: 380px;
     padding: 20px;

@@ -17,6 +17,7 @@ export const HeaderContainer = styled.header`
   @media screen and (max-width: 400px) {
     box-shadow: none;
     padding: 0 15px;
+    font-size: 0.8em;
   }
 
   ul {
