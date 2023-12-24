@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from "react";
+import { FC, ReactNode, useEffect } from "react";
 import { ListViewContainer } from "./ListView.styles";
 import ListItems from "../list-items/ListItems";
 import { Community } from "../../../types/community.type";

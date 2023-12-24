@@ -9,7 +9,6 @@ import { getHomes } from "../../services/home.service";
 import { getCommunities } from "../../services/community.service";
 import { Community } from "../../types/community.type";
 import { RenderItems } from "../../components/list/list-items/ListItems";
-import { checkImageUrl } from "../../util";
 
 const CommunityPage = () => {
   const [homes, setHomes] = useState<Home[]>([]);
