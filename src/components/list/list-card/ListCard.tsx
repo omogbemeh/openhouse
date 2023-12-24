@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   ListCardContainer,
   ListCardContentContainer,
@@ -8,6 +8,11 @@ import { Link } from "react-router-dom";
 import { Community } from "../../../types/community.type";
 import { Home } from "../../../types/home.type";
 import { formatCurrency } from "../../../services/community.service";
+import ImageComponent from "../../image/ImageComponent";
+import {
+  getAverageHomePricePerCommunity,
+  getHomes,
+} from "../../../services/home.service";
 
 type ListCardProps = {
   item: Community | Home;
@@ -18,13 +23,50 @@ const isCommunity = (item: Community | Home): item is Community => {
 };
 
 const RenderCommunity: FC<{ item: Community }> = ({ item }) => {
+  const [homes, setHomes] = useState<Home[]>([]);
+  const [avgHomePrice, setAvgHomePrice] =
+    useState<Record<string, { total: number; count: number }>>();
+
+  useEffect(() => {
+    const retrieveHomes = async () => {
+      getHomes().then((res) => {
+        res?.data;
+        if (res?.data) {
+          setHomes(res.data);
+        }
+      });
+    };
+
+    retrieveHomes();
+  }, []);
+
+  useEffect(() => {
+    setAvgHomePrice(getAverageHomePricePerCommunity(homes));
+  }, [homes]);
+
   const { id, name, imgUrl, group } = item;
+
+  const displayAveragePrice = (id: string) => {
+    if (avgHomePrice) {
+      const avg = avgHomePrice[id]?.total / avgHomePrice[id]?.count;
+
+      if (!isNaN(avg)) {
+        const avgAmount = formatCurrency(avg.toString());
+        return avgAmount;
+      } else {
+        return "N/A";
+      }
+    }
+
+    return "N/A";
+  };
+
   return (
-    <Link to={`/communities/${id}`}>
+    <Link to={`/communities/${id}?avgPrice=${displayAveragePrice(id)}`}>
       <ListCardContainer>
         {imgUrl && (
           <ListCardImageContainer>
-            <img src={imgUrl} alt={id} />
+            <ImageComponent src={imgUrl} alt={name} />
           </ListCardImageContainer>
         )}
         <ListCardContentContainer className="left-text">
@@ -33,6 +75,10 @@ const RenderCommunity: FC<{ item: Community }> = ({ item }) => {
           </p>
           <p>
             <strong>Community Group</strong>: {group}
+          </p>
+          <p>
+            <strong>Average Home Price</strong>:{" "}
+            {avgHomePrice && displayAveragePrice(id)}
           </p>
           <p>
             <Link to={`/communities/${id}`}>

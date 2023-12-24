@@ -4,12 +4,12 @@ This project is a web application built using React that retrieves and displays 
 
 ## Getting Started
 
-Follow these steps to set up and run the project locally:
+Please make sure youre using a current version of npm, then follow these steps to set up and run the project locally:
 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/openhouse-ai-coding-exercise.git
+   git clone https://github.com/omogbemeh/openhouse-ai-coding-exercise.git
    ```
 
 2. **Navigate to the project directory:**
@@ -38,6 +38,8 @@ The project is organized into components, services, and other relevant folders t
 
 - `src/components`: Contains React components responsible for rendering UI elements.
 - `src/services`: Includes service functions to fetch data from the provided RESTful endpoints.
+- `src/pages`: Includes the UI pages that are displayed on the browers. These pages make use of multiple components from the components folder
+- `src/types`: Type definitions for the different community and home data
 
 ## How to Use
 
@@ -48,16 +50,18 @@ The project is organized into components, services, and other relevant folders t
 
 If given more time, the following improvements and considerations could be implemented:
 
-- **Pagination**: For scalability, introduce pagination to handle a larger dataset.
-- **Error Handling**: Implement a robust error-handling mechanism for network errors and invalid data.
-- **Unit Testing**: Develop unit tests to ensure the reliability of components and servicesgit a.
+- **Deploying**: I [deployed the application](https://main.d13ugdw3fieexl.amplifyapp.com/communities/) on AWS Amplify, but I could not get API requests to work because of CORS. I fixed this locally, but could not replicate it on the cloud. If I had more time, I would have spun up a proxy express server.
+- **Error Handling**: I was able to check for invalid Image URL's, but I could not modify the UI to properly display the card, where the link was broken.
+- **Robust Filtering For Communities**: I was able to create a Robust sort and filtering feature for the HomesPage, but I could not do the same for the Communities, I was however able to sort them alphabetically.
+- **Unit Testing**: Develop unit tests to ensure the reliability of components and services.
 
 ## Evaluation Considerations
 
+- **Robust Filtering For Homes**: I was able to create a Robust sort and filtering feature for the HomesPage.
 - **Usability**: Information is presented in a clear and understandable manner.
 - **Design**: The application considers user tasks, looks professional, and is polished.
 - **Mobile-Friendly**: The design is responsive and considers mobile devices.
-- **Error Handling**: Network errors and invalid data are appropriately handled.
+- **Error Handling**: Invalid url paths, Network errors and invalid data are appropriately handled.
 - **Code Structure**: Code, components, and folders are organized thoughtfully.
 
 Feel free to reach out with any questions or feedback!

@@ -4,7 +4,7 @@ import {
   CommunityPageImageContainer,
 } from "./CommuityPage.styles";
 import { Home } from "../../types/home.type";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { getHomes } from "../../services/home.service";
 import { getCommunities } from "../../services/community.service";
 import { Community } from "../../types/community.type";
@@ -14,6 +14,8 @@ const CommunityPage = () => {
   const [homes, setHomes] = useState<Home[]>([]);
   const [community, setCommunity] = useState<Community>();
   const { communityId } = useParams();
+  const [searchParams] = useSearchParams();
+  const averageHomePrice = searchParams.get("avgPrice");
 
   useEffect(() => {
     getCommunityInfo();
@@ -50,9 +52,13 @@ const CommunityPage = () => {
           <CommunityPageImageContainer>
             <img src={community.imgUrl} alt="" />
           </CommunityPageImageContainer>
-          <p>
+          <p className="center-text">
             This Community belongs to the <strong>{community.group}</strong>{" "}
-            Group
+            Group. An average home in {community.name} is{" "}
+            {averageHomePrice === "N/A"
+              ? "Not Availale at the moment"
+              : averageHomePrice}
+            .
           </p>
         </>
       )}

@@ -16,3 +16,15 @@ export const getCommunityForHomeByCommunityId = (
 ) => {
   return communities.find((community) => community.id === communityId);
 };
+
+export const getAverageHomePricePerCommunity = (homes: Home[]) => {
+  const res: Record<string, { total: number; count: number }> = {};
+  homes.forEach((home) => {
+    if (res[home.communityId] === undefined) {
+      res[home.communityId] = { total: 0, count: 0 };
+    }
+    res[home.communityId].total += parseFloat(home.price);
+    res[home.communityId].count++;
+  });
+  return res;
+};
