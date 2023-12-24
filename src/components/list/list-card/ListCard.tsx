@@ -58,9 +58,6 @@ const RenderHome: FC<{ item: Home }> = ({ item }) => {
         <p>
           <strong>Type</strong>: {item.type}
         </p>
-        <p>
-          <strong>Community</strong>: I am a Home
-        </p>
       </ListCardContentContainer>
     </ListCardContainer>
   );

@@ -9,10 +9,27 @@ export const ListCardContainer = styled.div`
   border-radius: 12px;
   height: 100%;
   max-height: 100%;
+  width: 100%;
   min-width: 295px;
-  max-width: 550px;
+  max-width: 100%;
   border: 1px solid #ccc;
   box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.2);
+
+  @media screen and (max-width: 321px) {
+    /* Styles for screens with a minimum width of 321 pixels */
+    padding: 12px;
+  }
+
+  @media screen and (min-width: 414px) {
+    /* Styles for screens with a minimum width of 414px pixels */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    width: 380px;
+    padding: 20px;
+    gap: 20px;
+  }
 
   @media screen and (min-width: 768px) {
     /* Styles for screens with a minimum width of 768 pixels */
@@ -23,11 +40,6 @@ export const ListCardContainer = styled.div`
     width: 640px;
     padding: 20px;
     gap: 20px;
-  }
-
-  @media screen and (max-width: 321px) {
-    /* Styles for screens with a minimum width of 321 pixels */
-    padding: 12px;
   }
 
   &:hover {
@@ -42,7 +54,6 @@ export const ListCardImageContainer = styled.div`
   border-radius: 8px;
   display: grid;
   place-content: center;
-  background: red;
 
   img {
     max-width: 100%;

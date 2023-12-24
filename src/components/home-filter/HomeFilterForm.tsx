@@ -1,5 +1,6 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { HomeFilterParams } from "../../types/home.type";
+import Button from "../button/Button";
 
 interface HomeFilterFormProps {
   getFilterParams: (data: HomeFilterParams) => void;
@@ -212,11 +213,10 @@ const HomeFilterForm: FC<HomeFilterFormProps> = ({
       </div>
 
       <div className="form-buttons">
-        <button type="reset" onClick={resetForm}>
+        <Button background="#bbb" type="reset" onClick={resetForm}>
           Reset
-        </button>
-        <button type="submit">Apply Filters</button>
-        <button type="button">Close Modal</button>
+        </Button>
+        <Button type="submit">Apply Filters</Button>
       </div>
     </form>
   );

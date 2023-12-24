@@ -1,30 +1,63 @@
-# React + TypeScript + Vite
+# OpenHouse.AI Front End Web Development Coding Exercise
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a web application built using React that retrieves and displays data from two RESTful endpoints. The application focuses on presenting a collection of geographic communities in alphabetical order, showcasing each community's name, an image, and the average price of all the associated homes.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Follow these steps to set up and run the project locally:
 
-## Expanding the ESLint configuration
+1. **Clone the repository:**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   ```bash
+   git clone https://github.com/your-username/openhouse-ai-coding-exercise.git
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+2. **Navigate to the project directory:**
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+   ```bash
+   cd openhouse
+   ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+4. **Run the application:**
+
+   ```bash
+   npm run dev
+   ```
+
+   This will start the development server, and you can view the application at [http://localhost:5174](http://localhost:5174).
+
+## Application Structure
+
+The project is organized into components, services, and other relevant folders to maintain a clear and scalable structure.
+
+- `src/components`: Contains React components responsible for rendering UI elements.
+- `src/services`: Includes service functions to fetch data from the provided RESTful endpoints.
+
+## How to Use
+
+1. Upon launching the application, you will see a list of geographic communities displayed in alphabetical order.
+2. Each community entry includes the community name, an image, and the average price of homes associated with that community.
+
+## Additional Documentation
+
+If given more time, the following improvements and considerations could be implemented:
+
+- **Pagination**: For scalability, introduce pagination to handle a larger dataset.
+- **Error Handling**: Implement a robust error-handling mechanism for network errors and invalid data.
+- **Unit Testing**: Develop unit tests to ensure the reliability of components and services.
+
+## Evaluation Considerations
+
+- **Usability**: Information is presented in a clear and understandable manner.
+- **Design**: The application considers user tasks, looks professional, and is polished.
+- **Mobile-Friendly**: The design is responsive and considers mobile devices.
+- **Error Handling**: Network errors and invalid data are appropriately handled.
+- **Code Structure**: Code, components, and folders are organized thoughtfully.
+
+Feel free to reach out with any questions or feedback!

@@ -4,6 +4,7 @@ import { Home, HomeFilterParams } from "../types/home.type";
 import { getHomes } from "../services/home.service";
 import Modal from "../components/modal/Modal";
 import HomeFilterForm from "../components/home-filter/HomeFilterForm";
+import Button from "../components/button/Button";
 
 const HomesPage: FC = () => {
   const [homes, setHomes] = useState<Home[]>([]);
@@ -119,17 +120,20 @@ const HomesPage: FC = () => {
         </Modal>
       )}
       <h1 className="center-text">Discover OpenHouse Homes</h1>
-      <button className="my-3 center-text" onClick={toggleFilters}>
+      <Button className="my-3 center-text mx-auto" onClick={toggleFilters}>
         Filter And Sort
-      </button>
+      </Button>
       {homes && (
         <>
-          {filterParams && filteredHomes.length === 0 && (
-            <div>
-              <p>Nothing matched your filters, try different combinations</p>
-              <button onClick={toggleFilters}>Filter Homes</button>
-            </div>
-          )}
+          {Object.keys(filterParams).length !== 0 &&
+            filteredHomes.length === 0 && (
+              <div>
+                <p className="center-text">
+                  Nothing matched your filter criteria, Please try different
+                  combinations
+                </p>
+              </div>
+            )}
           <ListView items={filterParams ? filteredHomes : homes} />
         </>
       )}

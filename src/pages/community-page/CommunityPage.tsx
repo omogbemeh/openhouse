@@ -9,6 +9,7 @@ import { getHomes } from "../../services/home.service";
 import { getCommunities } from "../../services/community.service";
 import { Community } from "../../types/community.type";
 import { RenderItems } from "../../components/list/list-items/ListItems";
+import { checkImageUrl } from "../../util";
 
 const CommunityPage = () => {
   const [homes, setHomes] = useState<Home[]>([]);
@@ -60,8 +61,7 @@ const CommunityPage = () => {
       {!homes && <p>There are no homes at this location right now</p>}
       {homes.length > 0 && (
         <>
-          <h2>These are the homes in {community?.name.toLocaleUpperCase()}</h2>{" "}
-          {RenderItems(homes)}
+          <h2>These are the homes in {community?.name}</h2> {RenderItems(homes)}
         </>
       )}
     </CommunityPageContainer>

@@ -6,7 +6,7 @@ const Header: FC = () => {
   return (
     <HeaderContainer>
       <span>
-        <Link to="/cities">OpenHouse</Link>
+        <Link to="/communities">OpenHouse</Link>
       </span>
 
       <nav>

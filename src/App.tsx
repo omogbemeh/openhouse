@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import AppLayout from "./components/app-layout/AppLayout";
 import CommunitiesPage from "./pages/CommunitiesPage";
@@ -11,6 +15,10 @@ const router = createBrowserRouter([
     element: <AppLayout />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "/",
+        element: <Navigate to="/communities" />,
+      },
       {
         path: "/communities/:communityId",
         element: <CommunityPage />,

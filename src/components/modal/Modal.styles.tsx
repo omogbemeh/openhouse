@@ -55,4 +55,9 @@ export const ModalContentContainer = styled.div`
     border: 1px solid #ccc;
     border-radius: 7px;
   }
+
+  .form-buttons {
+    display: flex;
+    gap: 10px;
+  }
 `;
