@@ -28,4 +28,8 @@ export const HeaderContainer = styled.header`
   .active {
     text-decoration: underline;
   }
+
+  p {
+    color: #000;
+  }
 `;

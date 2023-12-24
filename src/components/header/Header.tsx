@@ -16,7 +16,7 @@ const Header: FC = () => {
         <Link to="/communities">OpenHouse</Link>
       </span>
 
-      <Button background="#ddd" onClick={handleBack}>
+      <Button background="#fff" onClick={handleBack}>
         <p>&larr;</p>
       </Button>
 
