@@ -50,7 +50,7 @@ If given more time, the following improvements and considerations could be imple
 
 - **Pagination**: For scalability, introduce pagination to handle a larger dataset.
 - **Error Handling**: Implement a robust error-handling mechanism for network errors and invalid data.
-- **Unit Testing**: Develop unit tests to ensure the reliability of components and services.
+- **Unit Testing**: Develop unit tests to ensure the reliability of components and servicesgit a.
 
 ## Evaluation Considerations
 
